@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="calculator">
+        <div class="display">
+            <div class="previous-operand" id="previousOperand"></div>
+            <div class="current-operand" id="currentOperand">0</div>
+        </div>
+        
+        <div class="mode-toggle">
+            <button id="modeToggle" onclick="calculator.toggleMode()">Scientific</button>
+        </div>
+        
+        <div class="buttons" id="buttonContainer">
+            <!-- Scientific functions (hidden by default) -->
+            <div class="scientific-row" id="scientificButtons">
+                <button class="function" onclick="calculator.calculate('sin')">sin</button>
+                <button class="function" onclick="calculator.calculate('cos')">cos</button>
+                <button class="function" onclick="calculator.calculate('tan')">tan</button>
+                <button class="function" onclick="calculator.calculate('log')">log</button>
+                <button class="function" onclick="calculator.calculate('ln')">ln</button>
+                <button class="function" onclick="calculator.calculate('sqrt')">√</button>
+                <button class="function" onclick="calculator.calculate('pow2')">x²</button>
+                <button class="function" onclick="calculator.calculate('pow')">xʸ</button>
+            </div>
+            
+            <!-- Main calculator buttons -->
+            <div class="main-buttons">
+                <button class="clear span-two" onclick="calculator.clear()">AC</button>
+                <button class="delete" onclick="calculator.delete()">DEL</button>
+                <button class="operator" onclick="calculator.chooseOperation('÷')">÷</button>
+                
+                <button onclick="calculator.appendNumber('7')">7</button>
+                <button onclick="calculator.appendNumber('8')">8</button>
+                <button onclick="calculator.appendNumber('9')">9</button>
+                <button class="operator" onclick="calculator.chooseOperation('×')">×</button>
+                
+                <button onclick="calculator.appendNumber('4')">4</button>
+                <button onclick="calculator.appendNumber('5')">5</button>
+                <button onclick="calculator.appendNumber('6')">6</button>
+                <button class="operator" onclick="calculator.chooseOperation('-')">-</button>
+                
+                <button onclick="calculator.appendNumber('1')">1</button>
+                <button onclick="calculator.appendNumber('2')">2</button>
+                <button onclick="calculator.appendNumber('3')">3</button>
+                <button class="operator" onclick="calculator.chooseOperation('+')">+</button>
+                
+                <button class="span-two" onclick="calculator.appendNumber('0')">0</button>
+                <button onclick="calculator.appendNumber('.')">.</button>
+                <button class="equals" onclick="calculator.compute()">=</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
